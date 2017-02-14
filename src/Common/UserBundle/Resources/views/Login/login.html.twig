@@ -1,0 +1,92 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% set cacheSidebar = true %}
+
+{% set cacheRecherche = true %}
+
+{% block pageTitre %}Connectez-vous ou créez un compte{% endblock %}
+
+{% block contenuTitre %}Connexion ou inscription{% endblock %}
+
+{% block contenu %}
+
+    {% include 'AniaBlogBundle:Template:flashMsg.html.twig' %}
+
+<div class="login-register two-cols">
+    <div class="col col-bdr">
+
+        <h2 class="strong">Connexion</h2>
+
+       {# <form class="login-form" action="{{ path('_check_path') }}" method="post">
+
+            <div class="form-row">
+                <label for="login" class="required">Login</label>
+                <input id="login" type="text" name="_username" value="{{ userName }}">
+            </div>
+
+            <div class="form-row">
+                <label for="passwd" class="required">Mot de passe</label>
+                <input id="passwd" type="password" name="_password">
+            </div>
+
+            <label class="checkbox remember">
+                <input type="checkbox" name="_remember_me" selected> Se souvenir de moi
+            </label>
+
+            <button class="btn-green submit">Connexion</button>
+        </form>#}
+
+        {% form_theme loginForm 'AniaBlogBundle:Form:form_template.html.twig' %}
+        {{ form(loginForm, {'action': path('_check_path')}) }}
+
+        <div class="remember-pass-form">
+            <h2 class="strong">Mot de passe oublié?</h2>
+
+            {#<form action="#" method="post">
+
+                <div class="form-row">
+                    <label for="email" class="required">Votre adresse email</label>
+                    <input id="email" type="text">
+                </div>
+
+                <button class="btn-green submit">Récuperer votre mot de passe</button>
+            </form>#}
+
+            {% form_theme rememberPasswordForm 'AniaBlogBundle:Form:form_template.html.twig' %}
+            {{ form(rememberPasswordForm) }}
+        </div>
+
+    </div>
+
+    <div class="col">
+
+        <h2 class="strong">Inscription</h2>
+
+        <form action="#" method="post">
+
+            <div class="form-row">
+                <label for="email" class="required">Adresse email</label>
+                <input type="text" id="email">
+            </div>
+
+            <div class="form-row">
+                <label for="email" class="required">Nom d'utilisateur</label>
+                <input type="text" id="email">
+            </div>
+
+            <div class="form-row">
+                <label for="pass" class="required">Mot de passe</label>
+                <input type="text" id="pass">
+            </div>
+
+            <div class="form-row">
+                <label for="passConf" class="required">Répétez le mot de passe</label>
+                <input type="text" id="passConf">
+            </div>
+
+            <button class="btn-green submit">Enregistrez-vous</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

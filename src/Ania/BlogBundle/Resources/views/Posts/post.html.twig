@@ -1,0 +1,130 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% block pageTitre %}{{ post.title }}{% endblock %}
+
+{% block contenuTitre %}{{ post.title }}{% endblock %}
+
+{% block contenu %}
+    <div class="left-side">
+
+        <article class="post">
+            <header>
+                <h1>{{ post.title }}</h1>
+
+                <div class="meta-data">
+                    <div class="author">Auteur <a href="#">{{ post.author }}</a></div>
+                    <div class="create-date">Ajouté le {{ post.publishedDate|date('d.m.Y, H:m') }}</div>
+                </div>
+            </header>
+
+            <div class="thumbnail">
+                <div class="meta-data">
+                    <div class="categories">
+                        Catégorie:
+                        <a href="#">{{ post.category.name }}</a>
+                    </div>
+
+                    <div class="tags">
+                        Tags:
+                        {% for tag in post.tags %}
+                        <a href="#">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <img src="{{ asset('bundles/aniablog/img/default-thumbnail.jpg') }}" alt="">
+            </div>
+
+
+          {{ post.content|raw }}
+        </article>
+
+        <div class="notification block">
+            Pour ajouter le commentaire <strong>vous devez <a href="#">vous connectez ou bien créer un compte d'abord</a></strong>
+        </div>
+
+        <section class="post-comments">
+            <header>
+                <h3>Commentaires (22)</h3>
+            </header>
+
+            <div class="comment">
+                <img class="thumbnail" src="{{ asset('bundles/aniablog/img/default-avatar.jpg') }}" alt="">
+
+                <div class="body">
+                    <div class="author">Gucio Brzeczyk</div>
+                    <div class="create-date">23/07/2016</div>
+
+                    <div class="clearfix"></div>
+
+                    <form action="#" method="post">
+                        <div class="form-row error">
+                            <textarea name="comment" id="comment-body"></textarea>
+                            <span>Ce champ ne doit pas être vide.</span>
+                        </div>
+                        <button id="save-comment" class="submit btn-green">Ajouter</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="comment">
+                <img class="thumbnail" src="{{ asset('bundles/aniablog/img/default-avatar.jpg') }}" alt="">
+
+                <div class="body">
+                    <div class="author">
+                        Pszczolka Maja
+                        <div class="divider"></div>
+                        <a href="#" class="delete">Supprimer</a>
+                    </div>
+                    <div class="create-date">23/07/2016</div>
+
+                    <div class="clearfix"></div>
+
+                    <p>
+                        Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.
+                    </p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <img class="thumbnail" src="{{ asset('bundles/aniablog/img/default-avatar.jpg') }}" alt="">
+
+                <div class="body">
+                    <div class="author">
+                        Gucio Brzeczyk
+                        <div class="divider"></div>
+                        <a href="#" class="delete">Supprimer</a>
+                    </div>
+                    <div class="create-date">23/07/2016</div>
+
+                    <div class="clearfix"></div>
+
+                    <p>
+                        Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.
+                    </p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <img class="thumbnail" src="{{ asset('bundles/aniablog/img/default-avatar.jpg') }}" alt="">
+
+                <div class="body">
+                    <div class="author">
+                        Tata Muminka
+                        <div class="divider"></div>
+                        <a href="#" class="delete">Supprimer</a>
+                    </div>
+                    <div class="create-date">23/07/2016</div>
+
+                    <div class="clearfix"></div>
+
+                    <p>
+                        Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- .left -->
+{% endblock %}

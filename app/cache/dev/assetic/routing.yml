@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /var/www/html/server/blog.dev4life.info/app/config/routing_dev.yml

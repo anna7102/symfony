@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="4dba5f9c79ae34be5884e1a3c8c45e92" resname="Bad credentials">
+        <source>Bad credentials</source>
+        <target>Informations de connexion incorrectes</target>
+      </trans-unit>
+      <trans-unit id="a2e3811a3713a404cdb23abf512db362" resname="User account is disabled.">
+        <source>User account is disabled.</source>
+        <target>Votre compte a été bloqué de façon permanente</target>
+      </trans-unit>
+      <trans-unit id="6cf67002310ad2668e1791ed59470e80" resname="User account is locked.">
+        <source>User account is locked.</source>
+        <target>Votre compte a été bloqué</target>
+      </trans-unit>
+      <trans-unit id="23d48526bdbf2023ad7bdae13ec7f879" resname="User account has expired.">
+        <source>User account has expired.</source>
+        <target>Votre compte a expiré</target>
+      </trans-unit>
+      <trans-unit id="2d3eef069b32aacbd940b100195e1e17" resname="User credentials have expired.">
+        <source>User credentials have expired.</source>
+        <target>Informations d'identification de l'utilisateur ont expiré</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

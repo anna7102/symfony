@@ -1,0 +1,9 @@
+services:
+    ania_blog.twig.extension.blog:
+        class: Ania\BlogBundle\Twig\Extension\BlogExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension}
+#    ania_blog.example:
+#        class: Ania\BlogBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,9 @@
+ania_blog_pages:
+    resource: "@AniaBlogBundle/Controller/PagesController.php"
+    type:     annotation
+    prefix:   /
+    
+ania_blog_posts:
+    resource: "@AniaBlogBundle/Controller/PostsController.php"
+    type:     annotation
+    prefix:   /

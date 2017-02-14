@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% spaceless %}{% block pageTitre %}Page d'accueil{% endblock %}{% endspaceless %} | AniaBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description" content="{% spaceless %}{% block pageDescription %}{% endblock %}{% endspaceless %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block stylesheets %}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+       {#{% stylesheets
+            'bundles/aniablog/css/normalize.css'
+            'bundles/aniablog/css/main.css'
+            filter='cssrewrite,?yui_css'
+            output = 'assets/css/compiled.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}">
+        {% endstylesheets %}#}
+
+         <link rel="stylesheet" href="{{ asset('bundles/aniablog/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/aniablog/css/main.css') }}">
+
+    {% endblock %}
+</head>
+<body>
+<header id="header">
+    <div class="top">
+        <div class="pos-center">
+
+            <a class="mobile-menu-trigger" href="#">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <div class="menu">
+                <nav>
+                   {# <ul>
+                        <li><a href="#">ACCUEIL</a></li>
+                        <li><a href="#">A PROPOS DE MOI</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>#}
+                    {{ print_main_menu() }}
+                </nav>
+
+                {{ print_categories_list() }}
+              {#  <ul class="categories">
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a class="active" href="#">JavaScript</a></li>
+                    <li><a href="#">PHP</a></li>
+                    <li><a href="#">Symfony</a></li>
+                    <li><a href="#">Angular JS</a></li>
+                </ul>#}
+
+                <!--
+                <div class="user-panel">
+                    <span class="user-name">Connecté : <a href="#">macq</a></span>
+                    <a class="btn-green" href="#">Déconnecter</a>
+                </div>
+                 -->
+
+                <div class="user-panel">
+                    <div class="btn-group">
+                        <a class="btn-green" href="#">Connectez-vous</a>
+                        <a class="btn-green" href="#">Créer votre compte</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    {% block topCarrousel %}
+    <div class="top-image"></div>
+    {% endblock %}
+</header>
+
+<div id="main">
+
+    <div class="header">
+        <div class="pos-center">
+            <h2 class="left-side">{% spaceless %}{% block contenuTitre %}{% endblock %}{% endspaceless %}</h2>
+            {% if cacheRecherche is not defined %}
+            <form class="right-side" action="{{ path('blog_search') }}">
+                <input type="text" name="search" value="{{ searchParam is defined ? searchParam : '' }}" placeholder="Recherche">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="pos-center">
+            {% block contenu %}{% endblock %}
+
+            {% if cacheSidebar is not defined %}
+            <div class="right-side sidebar">
+                <div class="menu">
+                    <h3>Catégories</h3>
+                    {{ print_categories_list() }}
+                   {# <ul>
+                        <li><a href="#">HTML & CSS</a></li>
+                        <li><a class="active" href="#">JavaScript</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">Symfony</a></li>
+                        <li><a href="#">Angular JS</a></li>
+                    </ul>#}
+                </div>
+
+               {# <div class="tag-cloud">
+                    <h3>Tag Cloud</h3>
+                    <div class="tags">
+                        <a style="font-size: 1.5rem" href="#">Sass</a>
+                        <a style="font-size: 2.3rem" href="#">Less</a>
+                        <a style="font-size: 1.3rem" href="#">Js</a>
+                        <a style="font-size: 2.3rem" href="#">Ajax</a>
+                        <a style="font-size: 2.3rem" href="#">JQuery</a>
+                        <a style="font-size: 2rem" href="#">ReactJs</a>
+                        <a style="font-size: 1.5rem" href="#">Css</a>
+                        <a style="font-size: 1.3rem" href="#">Html</a>
+                        <a style="font-size: 1.1rem" href="#">Bootstrap</a>
+                        <a style="font-size: 1.8rem" href="#">Foundation</a>
+                    </div>
+                </div>#}
+
+                {{ print_tags_cloud() }}
+
+                <div class="list-widget">
+                    <h3>Les plus commentés</h3>
+                    <ul>
+                        <li><a href="#">Lorem Ipsum (13)</a></li>
+                        <li><a href="#">Ipsum Lorem (76)</a></li>
+                        <li><a href="#">Ipsum Lorem Ipsum Lorem (53)</a></li>
+                    </ul>
+                </div>
+
+            </div> <!-- .right-side -->
+            {% endif %}
+        </div> <!-- .content -->
+
+        <div class="clearfix"></div>
+    </div> <!-- .pos-center -->
+</div> <!-- #main -->
+
+<footer id="footer">
+    <div class="top">
+        <div class="pos-center">
+           {# <ul>
+                <li><a href="#">ACCUEIL</a></li>
+                <li><a href="#">A PROPOS DE MOI</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">ADMIN</a></li>
+            </ul>#}
+            {{ print_main_menu() }}
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="pos-center">
+            <div class="copyrights">
+                <p>&copy; 2016 All rights reserved.</p>
+                <span>Ania Wojcik</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% block javascripts %}
+
+    {#{% javascripts
+    '@AniaBlogBundle/Resources/public/js/vendor/jquery-1.10.2.min.js'
+    '@AniaBlogBundle/Resources/public/js/vendor/*'
+    '@AniaBlogBundle/Resources/public/js/plugins.js'
+    '@AniaBlogBundle/Resources/public/js/main.js'
+    filter = '?yui_js'
+    output = 'assets/js/compiled.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}#}
+
+<script src="{{ asset('bundles/aniablog/js/vendor/jquery-1.10.2.min.js') }}"></script>
+<script src="{{ asset('bundles/aniablog/js/vendor/jquery.responsiSlider.js') }}"></script>
+<script src="{{ asset('bundles/aniablog/js/plugins.js') }}"></script>
+<script src="{{ asset('bundles/aniablog/js/main.js') }}"></script>
+{% endblock %}
+</body>
+</html>

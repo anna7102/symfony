@@ -1,0 +1,13 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% set cacheSidebar = true %}
+
+{% block pageTitre %}Page non trouvée{% endblock %}
+
+{% block contenuTitre %}Page non trouvée{% endblock %}
+
+{% block contenu %}
+    <div class="error-page">
+        <img src="{{ asset('bundles/aniablog/img/error404.png') }}" alt="Page non trouvée">
+    </div>
+{% endblock %}

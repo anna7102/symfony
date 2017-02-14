@@ -1,0 +1,95 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% block pageTitre %}Articles avec le tag "tag"{% endblock %}
+
+{% block contenuTitre %}Articles avec le tag "tag"{% endblock %}
+
+{% block contenu %}
+  <div class="left-side">
+
+      <article class="post">
+          <header>
+              <h1>L'extrait standard de Lorem Ipsum utilisé</h1>
+
+              <div class="meta-data">
+                  <div class="author">Auteur <a href="#">Ania</a></div>
+                  <div class="create-date">Ajouté 23.07.2016</div>
+              </div>
+          </header>
+
+          <div class="thumbnail">
+              <div class="meta-data">
+                  <div class="categories">
+                      Catégorie:
+                      <a href="#">HTML & CSS</a>
+                  </div>
+
+                  <div class="tags">
+                      Tags:
+                      <a href="#">Sass</a>
+                      <a href="#">Less</a>
+                      <a href="#">Bootstrap</a>
+                  </div>
+              </div>
+
+              <img src="{{ asset('bundles/aniablog/img/default-thumbnail.jpg') }}" alt="">
+          </div>
+
+          <p>
+              Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
+          </p>
+
+          <footer>
+              <a class="comments" href="#">Commentaires (14)</a>
+              <a href="#" class="btn-green">Lire la totalité</a>
+          </footer>
+      </article> <!-- .post -->
+
+      <article class="post">
+          <header>
+              <h1>Le Lorem Ipsum ainsi obtenu ne contient aucune répétition</h1>
+
+              <div class="meta-data">
+                  <div class="author">Auteur <a href="#">Ania</a></div>
+                  <div class="create-date">Ajouté 23.07.2016</div>
+              </div>
+          </header>
+
+          <div class="thumbnail">
+              <div class="meta-data">
+                  <div class="categories">
+                      Catégories:
+                      <a href="#">HTML & CSS</a>
+                  </div>
+
+                  <div class="tags">
+                      Tags:
+                      <a href="#">Sass</a>
+                      <a href="#">Less</a>
+                      <a href="#">Bootstrap</a>
+                  </div>
+              </div>
+
+              <img src="{{ asset('bundles/aniablog/img/default-thumbnail.jpg') }}" alt="">
+          </div>
+
+          <p>
+              Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum.
+          </p>
+
+          <footer>
+              <a class="comments" href="#">Commentaires (31)</a>
+              <a href="#" class="btn-green">Lire la totalité</a>
+          </footer>
+      </article> <!-- .post -->
+
+      <div class="pagination">
+          <ul>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a class="current" href="#">3</a></li>
+              <li><a href="#">4</a></li>
+          </ul>
+      </div> <!-- .pagination -->
+  </div> <!-- .left-side -->
+{% endblock %}

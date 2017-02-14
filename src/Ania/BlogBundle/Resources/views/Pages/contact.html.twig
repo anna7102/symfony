@@ -1,0 +1,36 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% block pageTitre %}Contact{% endblock %}
+
+{% block contenuTitre %}Contact{% endblock %}
+
+{% block contenu %}
+    <div class="contact-page left-side">
+
+        <div class="notification success">
+           Le message a bien été <strong>envoyé!</strong>
+        </div>
+
+        <form action="#" method="post">
+            <div class="form-row">
+                <label for="name" class="required">Nom / Prénom</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="form-row error">
+                <label for="email" class="required">Adresse e-mail</label>
+                <input type="text" id="email">
+                <span>Merci de remplir ce champ</span>
+            </div>
+
+            <div class="form-row error">
+                <label for="message" class="required">Votre message</label>
+                <textarea name="message" id="message"></textarea>
+                <span>Merci de remplir ce champ</span>
+            </div>
+
+            <button class="btn-green submit">Envoyer</button>
+        </form>
+
+    </div> <!-- .left -->
+{% endblock %}

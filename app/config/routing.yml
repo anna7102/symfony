@@ -1,0 +1,7 @@
+ania_blog:
+    resource: "@AniaBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+common_blog:
+    resource: "@CommonUserBundle/Resources/config/routing.yml"
+    prefix:   /

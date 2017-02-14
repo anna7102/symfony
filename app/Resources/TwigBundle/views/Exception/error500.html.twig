@@ -1,0 +1,13 @@
+{% extends "AniaBlogBundle::base.html.twig" %}
+
+{% set cacheSidebar = true %}
+
+{% block pageTitre %}Erreur inattendue{% endblock %}
+
+{% block contenuTitre %}Erreur inattendue{% endblock %}
+
+{% block contenu %}
+    <div class="error-page">
+        <img src="{{ asset('bundles/aniablog/img/error500.jpg') }}" alt="Erreur inattendue">
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+#Auth messages
+"Bad credentials.": "Informations de connexion incorrectes"
+"User account is disabled.": "Votre compte a été bloqué de façon permanente"
+"User account is locked.": "Votre compte a été bloqué"
+"User account has expired.": "Votre compte a expiré"
+"User credentials have expired.": "Informations d'identification de l'utilisateur ont expiré"
+"Login": "Login"
+"Mot de passe": "Mot de passe"
+"Connexion": "Connexion"
+"Votre adresse email": "Votre adresse email"
+"Rappeler le mot de passe": "Rappeler le mot de passe"
